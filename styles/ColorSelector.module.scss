@@ -1,0 +1,33 @@
+@import './Variables.module.scss';
+
+.colorSelector {
+	border-radius: 50%;
+	height: 1.5rem;
+	width: 1.5rem;
+
+	margin: 0.5rem;
+
+	background-color: grey;
+
+	cursor: pointer;
+}
+
+.red {
+	background-color: $color-red;
+}
+
+.green {
+	background-color: $color-green;
+}
+
+.blue {
+	background-color: $color-blue;
+}
+
+.yellow {
+	background-color: $color-yellow;
+}
+
+.pink {
+	background-color: $color-pink;
+}

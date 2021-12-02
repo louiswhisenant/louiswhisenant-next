@@ -6,8 +6,6 @@ export const updateTheme = (payload) => (dispatch) => {
 		type: types.UPDATE_THEME,
 		payload,
 	});
-
-	console.log(payload);
 };
 
 // RESET THEME

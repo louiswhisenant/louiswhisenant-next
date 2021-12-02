@@ -3,7 +3,7 @@ import styles from '../styles/Portfolio.module.scss';
 import { useSelector } from 'react-redux';
 
 import NavigationMenu from '../components/NavigationMenu';
-import ThemeMenu from '../components/ThemeMenu';
+import ThemeMenu from '../components/theme/ThemeMenu';
 
 const Portfolio = () => {
 	const state = useSelector((state) => state);
@@ -11,8 +11,13 @@ const Portfolio = () => {
 
 	const { canvas, splash, title, line } = styles;
 
+	const style = {
+		color: color1,
+		backgroundColor: color2,
+	};
+
 	return (
-		<div className={canvas}>
+		<div className={canvas} style={style}>
 			<Head>
 				<title>Louis Whisenant</title>
 				<meta
@@ -25,8 +30,8 @@ const Portfolio = () => {
 			<NavigationMenu />
 			<ThemeMenu />
 
-			<div className={splash}>
-				<h1 className={title} style={{ color: color1 }}>
+			<div className={splash} style={{ backgroundColor: color2 }}>
+				<h1 className={title} style={{ color: color3 }}>
 					Louis Whisenant
 				</h1>
 				<hr className={line} />
