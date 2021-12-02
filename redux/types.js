@@ -1,0 +1,3 @@
+// REDUX ACTION TYPES
+export const UPDATE_THEME = 'UPDATE_THEME';
+export const RESET_THEME = 'RESET_THEME';
