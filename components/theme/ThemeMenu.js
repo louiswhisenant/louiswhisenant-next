@@ -8,7 +8,13 @@ import styles from '../../styles/ThemeMenu.module.scss';
 const ThemeMenu = () => {
 	const state = useSelector((state) => state);
 	const dispatch = useDispatch();
-	const { color1, color2, color3 } = state.theme;
+	const {
+		colorPrimary,
+		colorSecondary,
+		colorTertiary,
+		backgroundPrimary,
+		backgroundSecondary,
+	} = state.theme;
 
 	const [open, setOpen] = useState(false);
 
@@ -23,9 +29,16 @@ const ThemeMenu = () => {
 			</button>
 
 			{open && (
-				<div className={styles.menuWindow}>
+				<div
+					className={styles.menuWindow}
+					style={{ backgroundColor: backgroundSecondary }}>
 					<button
 						className={styles.closeMenu}
+						style={{
+							color: colorPrimary,
+							backgroundColor: backgroundPrimary,
+							outline: colorPrimary,
+						}}
 						onClick={() => {
 							setOpen(false);
 						}}>
@@ -34,33 +47,78 @@ const ThemeMenu = () => {
 					<div className={styles.menuSection}>
 						<h1>Color 1</h1>
 						<div className={styles.palette}>
-							<ColorSelector stateColor='color1' value='red' />
-							<ColorSelector stateColor='color1' value='green' />
-							<ColorSelector stateColor='color1' value='blue' />
-							<ColorSelector stateColor='color1' value='yellow' />
-							<ColorSelector stateColor='color1' value='pink' />
+							<ColorSelector
+								stateColor='colorPrimary'
+								value='red'
+							/>
+							<ColorSelector
+								stateColor='colorPrimary'
+								value='green'
+							/>
+							<ColorSelector
+								stateColor='colorPrimary'
+								value='blue'
+							/>
+							<ColorSelector
+								stateColor='colorPrimary'
+								value='yellow'
+							/>
+							<ColorSelector
+								stateColor='colorPrimary'
+								value='pink'
+							/>
 						</div>
 					</div>
 
 					<div className={styles.menuSection}>
 						<h1>Color 2</h1>
 						<div className={styles.palette}>
-							<ColorSelector stateColor='color2' value='red' />
-							<ColorSelector stateColor='color2' value='green' />
-							<ColorSelector stateColor='color2' value='blue' />
-							<ColorSelector stateColor='color2' value='yellow' />
-							<ColorSelector stateColor='color2' value='pink' />
+							<ColorSelector
+								stateColor='colorSecondary'
+								value='red'
+							/>
+							<ColorSelector
+								stateColor='colorSecondary'
+								value='green'
+							/>
+							<ColorSelector
+								stateColor='colorSecondary'
+								value='blue'
+							/>
+							<ColorSelector
+								stateColor='colorSecondary'
+								value='yellow'
+							/>
+							<ColorSelector
+								stateColor='colorSecondary'
+								value='pink'
+							/>
 						</div>
 					</div>
 
 					<div className={styles.menuSection}>
 						<h1>Color 3</h1>
 						<div className={styles.palette}>
-							<ColorSelector stateColor='color3' value='red' />
-							<ColorSelector stateColor='color3' value='green' />
-							<ColorSelector stateColor='color3' value='blue' />
-							<ColorSelector stateColor='color3' value='yellow' />
-							<ColorSelector stateColor='color3' value='pink' />
+							<ColorSelector
+								stateColor='colorTertiary'
+								value='red'
+							/>
+							<ColorSelector
+								stateColor='colorTertiary'
+								value='green'
+							/>
+							<ColorSelector
+								stateColor='colorTertiary'
+								value='blue'
+							/>
+							<ColorSelector
+								stateColor='colorTertiary'
+								value='yellow'
+							/>
+							<ColorSelector
+								stateColor='colorTertiary'
+								value='pink'
+							/>
 						</div>
 					</div>
 					<button

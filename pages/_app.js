@@ -1,4 +1,4 @@
-import { styles } from '../styles/globals.css';
+import { styles } from '../styles/globals.scss';
 import { Provider } from 'react-redux';
 import { useStore } from '../redux/store';
 

@@ -7,13 +7,19 @@ import ThemeMenu from '../components/theme/ThemeMenu';
 
 const Portfolio = () => {
 	const state = useSelector((state) => state);
-	const { color1, color2, color3 } = state.theme;
+	const {
+		colorPrimary,
+		colorSecondary,
+		colorTertiary,
+		backgroundPrimary,
+		backgroundSecondary,
+	} = state.theme;
 
 	const { canvas, splash, title, line } = styles;
 
 	const style = {
-		color: color1,
-		backgroundColor: color2,
+		color: colorPrimary,
+		backgroundColor: colorSecondary,
 	};
 
 	return (
@@ -30,16 +36,20 @@ const Portfolio = () => {
 			<NavigationMenu />
 			<ThemeMenu />
 
-			<div className={splash} style={{ backgroundColor: color2 }}>
-				<h1 className={title} style={{ color: color3 }}>
+			<div
+				className={splash}
+				style={{ backgroundColor: backgroundPrimary }}>
+				<h1 className={title} style={{ color: colorTertiary }}>
 					Louis Whisenant
 				</h1>
 				<hr className={line} />
-				<h2 className={title}>Web Developer</h2>
+				<h2 className={title} style={{ color: colorTertiary }}>
+					Web Developer
+				</h2>
 
-				<div>{color1}</div>
-				<div>{color2}</div>
-				<div>{color3}</div>
+				<div>{colorPrimary}</div>
+				<div>{colorSecondary}</div>
+				<div>{colorTertiary}</div>
 			</div>
 		</div>
 	);
